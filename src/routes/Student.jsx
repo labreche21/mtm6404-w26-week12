@@ -37,7 +37,7 @@ export const Student = () => {
             {student && (
             <div>
                 <h1>{student?.firstName} {student?.lastName}</h1>
-                <p>Student Number: {student.studentNumber}</p>
+                <p>Student Number: {student?.studentNumber}</p>
                 <p>Email: {student?.email}</p>
             </div>
             )}
