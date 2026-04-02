@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCBB--zvtMYjaSyN0g02UzQofOFrcWs7Zk",
-  authDomain: "mtm6404-claist-2396d.firebaseapp.com",
-  projectId: "mtm6404-claist-2396d",
-  storageBucket: "mtm6404-claist-2396d.firebasestorage.app",
-  messagingSenderId: "999889307452",
-  appId: "1:999889307452:web:505a9e1d82163b69304039"
+  apiKey: "AIzaSyD5SDl73aoB7uyFCpwfxCtZVObmr2aADpw",
+  authDomain: "m6m6404-project.firebaseapp.com",
+  projectId: "m6m6404-project",
+  storageBucket: "m6m6404-project.firebasestorage.app",
+  messagingSenderId: "201126953415",
+  appId: "1:201126953415:web:9b2652aa295aa0f44799e2"
 };
 
 const app = initializeApp(firebaseConfig);
