@@ -36,6 +36,9 @@ const App = () => {
           </li>
         ))}
       </ul>
+      <button>
+        <Link to="/add">Add Student</Link>
+      </button>
     </>
   );
 }

@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import db from '../utils/db';
-import { doc, getDoc } from "firebase/firestore";
-import { useParams } from "react-router-dom";
+import { doc, getDoc, updateDoc, deleteDoc } from "firebase/firestore";
+import { useParams, useNavigate } from "react-router-dom";
+import EditForm from "../components/editForm";
 
 export const Student = () => {
-
+    const navigate = useNavigate();
     // set up state variable for student
     const [student, setStudent] = useState({});
 
@@ -28,6 +29,17 @@ export const Student = () => {
         }
     }
 
+    const handleUpdate = async (updatedStudent) => {
+        const docRef = doc(db, 'classlist', id)
+
+        try {
+            await updateDoc(docRef, updatedStudent);
+            navigate('/');
+        } catch (err) {
+            console.error('Cannot update student, try again later', err)
+        }
+     }
+
     useEffect(() => {
         fetchStudentById(id);
     }, [id]);
@@ -35,11 +47,7 @@ export const Student = () => {
     return (
         <div className="student">
             {student && (
-            <div>
-                <h1>{student?.firstName} {student?.lastName}</h1>
-                <p>Student Number: {student?.studentNumber}</p>
-                <p>Email: {student?.email}</p>
-            </div>
+            <EditForm student={student} onUpdate={handleUpdate} />
             )}
         </div>
     );
